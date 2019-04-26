@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ScheduleStartComponent implements OnInit {
 
   mobile = false;
+  chargeCheckboxes = false;
 
   grades = [
     'Software',
@@ -50,10 +51,18 @@ export class ScheduleStartComponent implements OnInit {
 
   changeGradeName(name) {
     this.subjectName = name;
+
+    if(this.subjectName != 'Elige Grado' && this.courseName != 'Elige Curso') {
+      this.chargeCheckboxes = true;
+    }
   }
 
   changeCourseName(name) {
     this.courseName = name;
+
+    if(this.subjectName != 'Elige Grado' && this.courseName != 'Elige Curso') {
+      this.chargeCheckboxes = true;
+    }
   }
 
   detectmob() { 
